@@ -98,11 +98,17 @@
     <h2>5. 权限说明（Permissions）</h2>
     <p>拾译请求以下浏览器权限，仅用于提供翻译功能：</p>
     <ul>
-        <li><strong>activeTab</strong>：读取当前标签页中选中的文本</li>
-        <li><strong>storage</strong>：在本地保存用户设置</li>
-        <li><strong>contextMenus</strong>：在右键菜单中添加翻译选项</li>
+        <li><strong>storage</strong>：在本地保存用户设置（如语言偏好、翻译引擎选择等）</li>
+        <li><strong>访问所有网站（host_permissions: &lt;all_urls&gt;）</strong>：允许在任何网页上提供翻译功能。此权限仅用于：
+            <ul>
+                <li>读取您在网页上选中的文本</li>
+                <li>显示翻译结果浮窗</li>
+                <li>不会读取、记录或上传网页内容</li>
+            </ul>
+        </li>
+        <li><strong>内容脚本（content_scripts）</strong>：在网页中注入翻译功能脚本，用于检测文本选择和显示翻译界面</li>
     </ul>
-    <p>这些权限不会被用于收集或传输任何个人数据。</p>
+    <p>这些权限不会被用于收集或传输任何个人数据。所有数据处理均在本地完成。</p>
 
     <h2>6. 数据安全（Data Security）</h2>
     <p>由于拾译不收集或存储任何用户数据，因此不存在数据泄露风险。所有处理均在您的设备本地完成。</p>
@@ -180,10 +186,17 @@
     <h3>5. Permissions</h3>
     <p>PickTrans requests the following browser permissions:</p>
     <ul>
-        <li><strong>activeTab</strong>: Read selected text in current tab</li>
-        <li><strong>storage</strong>: Save user settings locally</li>
-        <li><strong>contextMenus</strong>: Add translation option to context menu</li>
+        <li><strong>storage</strong>: Save user settings locally (language preferences, translation engine selection, etc.)</li>
+        <li><strong>Access to all websites (host_permissions: &lt;all_urls&gt;)</strong>: Enable translation on any webpage. This permission is only used to:
+            <ul>
+                <li>Read text you select on webpages</li>
+                <li>Display translation result popups</li>
+                <li>Does not read, log, or upload webpage content</li>
+            </ul>
+        </li>
+        <li><strong>Content scripts</strong>: Inject translation functionality into webpages to detect text selection and display translation interface</li>
     </ul>
+    <p>These permissions are not used to collect or transmit any personal data. All data processing is done locally.</p>
 
     <h3>6. Data Security</h3>
     <p>Since PickTrans does not collect or store any user data, there is no risk of data breach. All processing is done locally on your device.</p>
